@@ -42,7 +42,7 @@ class InitiatePayment(generics.GenericAPIView):
     def get(self, request):
         payload = {
             "amount":25000,
-            "redirectUrl":"payment-done.html",
+            "redirectUrl":"course-selling-agric.netlify.app/payment-done.html",
             }
         headers = {
             "apiuser":sandbox_apiuser,

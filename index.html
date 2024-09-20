@@ -177,7 +177,7 @@
             </div>
             <a type="button" id="pay-button" href="#pay">
                 
-                <button type="menu" role="link" class="buy-button">Commencez maintenant</button>
+                <button type="menu" role="link" class="buy-button"><p id="button-text">Commencez maintenant</p><div id="loader" class="loader"></div></button>
             </a>
             
         </div>
@@ -210,18 +210,17 @@
         }
         const paymentButton = document.getElementById("pay-button");
         paymentButton.addEventListener("click", function (){
+            document.getElementById("button-text").style.display = "none";
+            document.getElementById("loader").style.display = "flex";
             console.log("HAs been clicked");
             fetch(`${prodApi}/init-pay`).then((res)=>{
                 res.json().then((response)=>{
+                    document.getElementById("button-text").style.display = "flex";
+                    document.getElementById("loader").style.display = "none";
                     console.log(response)
                     if(response.link){
                         localStorage.setItem("transId", response.transId)
-                        if(response.link.startsWith('h')){
-                            window.location.href = `/${response.link.split('/')[3]}`
-                        }
-                        else{
-                            window.location.href = `/${response.link}`
-                        }
+                        window.location.href = response.link
                         
                     }
                 })
