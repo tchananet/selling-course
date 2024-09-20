@@ -82,18 +82,18 @@ WSGI_APPLICATION = 'api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 # dev database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # We recommend using the django-environ(pip install django-environ) or dj-database-url(pip install dj-database-url) to parse the DATABASE_URL from os.environ['DATABASE_URL']
 
-DATABASE_URL = 'postgres://selling_user:password@localhost/selling'
+# DATABASE_URL = 'postgres://selling_user:password@localhost/selling'
 
-DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+# DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 
 
 # DATABASES = {
