@@ -204,10 +204,7 @@
                     panel.style.maxHeight = panel.scrollHeight + "px";
                 }
             })
-        }
-        const fdan = async () =>{
-            fetch(`${prodApi}/webhook`)
-        }
+        } 
         const paymentButton = document.getElementById("pay-button");
         paymentButton.addEventListener("click", function (){
             document.getElementById("button-text").style.display = "none";
@@ -218,9 +215,15 @@
                     document.getElementById("button-text").style.display = "flex";
                     document.getElementById("loader").style.display = "none";
                     console.log(response)
+                    const prevId = localStorage.getItem("transId")
+                    localStorage.removeItem("transId")
+
                     if(response.link){
+                        
                         localStorage.setItem("transId", response.transId)
-                        window.location.href = response.link
+                        setTimeout(()=>{
+                            window.location.href = response.link
+                        }, 1000) 
                         
                     }
                 })

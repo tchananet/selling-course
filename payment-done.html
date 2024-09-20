@@ -122,7 +122,14 @@
                 }
             })
         }
-        const transId = localStorage.getItem("transId");
+        // const transId = localStorage.getItem("transId");
+        var transId = "";
+        try{
+            transId = window.location.search.split("?")[1].split("&")[0].split("=")[1]
+        }
+        catch {
+            transId = localStorage.getItem("transId");
+        }
         const codeText = document.getElementById("code-stuff")  
         codeText.textContent = `Votre code est ${transId}.`
                     

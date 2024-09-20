@@ -42,7 +42,7 @@ class InitiatePayment(generics.GenericAPIView):
     def get(self, request):
         payload = {
             "amount":25000,
-            "redirectUrl":"course-selling-agric.netlify.app/payment-done.html",
+            "redirectUrl":"http://course-selling-agric.netlify.app/payment-done.html",
             }
         headers = {
             "apiuser":sandbox_apiuser,
@@ -58,8 +58,8 @@ class InitiatePayment(generics.GenericAPIView):
 
             except Exception as e:
                 print(e)
-                return Response( request) 
-        # return Response (request)
+                return Response(request) 
+        return Response (request)
         
 class CheckPayment(generics.GenericAPIView):
     def get(self, request):
