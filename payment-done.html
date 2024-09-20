@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- <title>ACCEUIL</title> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/ico/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/ico/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <header></header> -->
+    <main class="home row success" id="home">
+        <div class="home-header col-md-7 col-sm-12" style="align-items: center;">
+            <h3 class="home-header-title">Merci pour votre inscription! </h3>
+            <p class="home-header-text">Votre paiement a été traité avec succès. Bienvenue dans le cours "Maîtriser les Pratiques Agricoles" !!</p>
+            <h3>Le contenu de la formation a été envoyé dans votre boîte email.</h3>
+            <h2 id="code-stuff" style="padding: 1rem;">Le contenu de la formation a été envoyé dans votre boîte email.</h2>
+
+            <p>N.B. Regardez votre boîte de spam si vous le mail n'apparait pas dans votre reception.</p>
+            <h3>Nos packs de formation comprennent</h3>
+            <!-- <p> Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laboru.  Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laboru.  Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laboru</p> -->
+            <div>
+                <ul class="audience-items">
+                    <li><img src="assets/img/tick.png" alt="">  Vidéos explicatives détaillées pour chaque étape.</li>
+                    <li><img src="assets/img/tick.png" alt="">  Supports de cours et fiches pratiques.</li>
+                    <li><img src="assets/img/tick.png" alt="">  Suivi personnalisé et accès aux conseils de nos experts.</li>
+                    <!-- <li><img src="assets/img/tick.png" alt="">  Amateurs</li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="home-image  col-md-5 col-sm-12"> -->
+            <!-- <div class="top-right">N</div> -->
+            <!-- <div class="buttom-left">M</div> -->
+            <!-- <img class="bg-img" src="assets/img/hero-media.avif" alt="" srcset=""> -->
+            <!-- <video src="assets/vids/ads.mp4" class="bg-img" autoplay loop controls></video> -->
+            <!-- <div class="button-right"> From zero to hero</div> -->
+        <!-- </div> -->
+    </main>
+    <div style="display: flex;justify-content: center;">
+        <img style=" width: 50%;" src="assets/img/divider.png" alt=""> 
+    </div> 
+
+
+    <section class="FAQ" id="FAQ">
+        <h3 class="question-title">
+           Foire aux Questions
+       </h3>
+       <p class="question-text">
+           Les reponses au questions frequentes a propos de cette formation.
+       </p>
+       <div class="question">
+           <button type="button" class="question-button button">
+               <p>Cette formation est-elle pour les débutants?</p>   <img src="assets/img/plus.png" class="plus" alt="">
+           </button>
+           <div class="answer-panel">
+               <p>Oui, elle est conçue pour convenir aussi bien aux débutants qu’aux agriculteurs plus expérimentés.
+               </p>
+           </div>
+       </div>
+       <div class="question">
+           <button type="button" class="question-button button">
+               <p>Quelle est la durée de la formation ?</p>   <img src="assets/img/plus.png" class="plus" alt="">
+           </button>
+           <div class="answer-panel">
+               <p>La formation est divisée en trois vidéos pour une durée totale d’environ 1 heure.</p>
+           </div>
+       </div>
+       <div class="question">
+           <button type="button" class="question-button button">
+               <p>J'ai perdu mon access aux support, comment les recuperer?</p>   <img src="assets/img/plus.png" class="plus" alt="">
+           </button>
+           <div class="answer-panel">
+               <p>Aller dans la page <a href="redeem.html">Reclamation</a> et entrez le code qui vous a ete remis a votre inscription et votre address email. Les cours vous serons envoyes si votre code est valide.</p>
+           </div>
+       </div>
+       <div class="question">
+           <button type="button" class="question-button button">
+               <p>Comment continuer apres les cours?</p>   <img src="assets/img/plus.png" class="plus" alt="">
+           </button>
+           <div class="answer-panel">
+               <p>Oui, nos packs de formation comprennent tout le nécessaire pour réussir :  modules vidéo, supports de cours, et accès à des conseils d'experts.  Parfait pour les débutants et les agriculteurs expérimentés souhaitant  se perfectionner</p>
+           </div>
+       </div> 
+</section>
+    <div style="display: flex;justify-content: center;">
+        <img style=" width: 50%;" src="assets/img/divider.png" alt=""> 
+    </div> 
+
+    <footer class="footer">
+        <p>Darius</p>
+        <p>Designed by KTN</p>
+    </footer>
+    <script>
+        const devApi = "http://127.0.0.1:8000";
+        const prodApi = "https://api-floral-water-6550.fly.dev";
+        fetch(`${prodApi}`); 
+        var acc = document.getElementsByClassName('question-button');
+        var i;
+        for (i=0;i<acc.length;i++){
+            acc[i].addEventListener("click", function(){
+                this.classList.toggle('active');
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    panel.style.margin = null;
+                    
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            })
+        }
+        const transId = localStorage.getItem("transId");
+        const codeText = document.getElementById("code-stuff")  
+        codeText.textContent = `Votre code est ${transId}.`
+                    
+        fetch(`${prodApi}/check-pay?transId=${transId}`).then((res)=>{
+            console.log(res);
+            res.json().then((response)=>{
+                console.log(response)
+                if(response.status==="SUCCESSFUL"){
+                    alert(`Votre code est ${response.transId} et le email a ete envoye a ${response.email}`)
+                    const codeText = document.getElementById("code-stuff")
+                    codeText.textContent = `Votre code est ${response.transId} et le email a ete envoye a ${response.email}.`
+                    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
