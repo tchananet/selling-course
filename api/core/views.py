@@ -12,8 +12,8 @@ class CourseGenericViewset(viewsets.ModelViewSet):
     queryset = CourseSales.objects.all()
     serializer_class = SalesSerializer
 
-sandbox_apiuser = "b891c008-8a2e-48b5-84d6-75e41cb1b79d"
-sandbox_apikey = "FAK_TEST_16b61653b8d2a2a8e2b0"
+sandbox_apiuser = "159c3024-396a-47ff-814b-163c19191723"
+sandbox_apikey = "FAK_TEST_1cd4331800b4df6ae913"
 initiatePaymentUrlSandbox = "https://sandbox.fapshi.com/initiate-pay"
 checkPaymentUrlSandbox = "https://sandbox.fapshi.com/payment-status/"
 
