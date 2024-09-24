@@ -14,8 +14,16 @@ class CourseGenericViewset(viewsets.ModelViewSet):
 
 sandbox_apiuser = "b891c008-8a2e-48b5-84d6-75e41cb1b79d"
 sandbox_apikey = "FAK_TEST_16b61653b8d2a2a8e2b0"
-initiatePaymentUrl = "https://sandbox.fapshi.com/initiate-pay"
-checkPaymentUrl = "https://sandbox.fapshi.com/payment-status/"
+initiatePaymentUrlSandbox = "https://sandbox.fapshi.com/initiate-pay"
+checkPaymentUrlSandbox = "https://sandbox.fapshi.com/payment-status/"
+
+# initiatePaymentUrl = "https://sandbox.fapshi.com/initiate-pay"
+# initiatePaymentUrl = "https://sandbox.fapshi.com/payment-status/"
+
+live_apiuser = "2979828e-189a-4771-8a78-c613035863ba"
+live_apikey = "FAK_83219f5f35bd66dc728e65e787a1dd1a"
+initiatePaymentUrl = "https://live.fapshi.com/initiate-pay"
+checkPaymentUrl = "https://live.fapshi.com/payment-status/"
 
 message = '''
             Salutations,
@@ -42,13 +50,13 @@ class InitiatePayment(generics.GenericAPIView):
     def get(self, request):
         payload = {
             "amount":25000,
-            "redirectUrl":"http://course-selling-agric.netlify.app/payment-done.html",
+            "redirectUrl":"http://www.agribea.com/payment-done.html",
             }
         headers = {
             "apiuser":sandbox_apiuser,
             "apikey":sandbox_apikey
         }
-        request = requests.post(initiatePaymentUrl, json=payload, headers=headers) 
+        request = requests.post(initiatePaymentUrlSandbox, json=payload, headers=headers) 
         print(request.status_code)
         if (request.status_code==200):
             response = request.json()
@@ -68,7 +76,7 @@ class CheckPayment(generics.GenericAPIView):
             "apiuser":sandbox_apiuser,
             "apikey":sandbox_apikey
         }
-        checkPaymentUrlFull = str(checkPaymentUrl) + str(transId)
+        checkPaymentUrlFull = str(checkPaymentUrlSandbox) + str(transId)
         print(checkPaymentUrlFull)
         request = requests.get(checkPaymentUrlFull,headers=headers) 
         print(request.status_code)
@@ -95,7 +103,7 @@ class RedeemPayment(generics.GenericAPIView):
             "apiuser":sandbox_apiuser,
             "apikey":sandbox_apikey
         } 
-        checkPaymentUrlFull = str(checkPaymentUrl) + str(transId)
+        checkPaymentUrlFull = str(checkPaymentUrlSandbox) + str(transId)
         print(checkPaymentUrlFull)
         request = requests.get(checkPaymentUrlFull,headers=headers) 
         print(request.status_code)

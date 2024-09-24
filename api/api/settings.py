@@ -154,18 +154,49 @@ DEFAULT_FILTER_BACKENDS = ['rest_framework.filters.SearchFilter']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']  # <-- Updated!
+CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev', 'https://*.com']  # <-- Updated!
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER =  'sir.crocodile2016@gmail.com' #sender's email-id
-EMAIL_HOST_PASSWORD = 'vnkx qraf kigj qodw' #password associated with above email-id (not the regular password)
+# EMAIL_HOST_USER =  'sir.crocodile2016@gmail.com' #sender's email-id
+EMAIL_HOST_USER =  'agribea.dar@gmail.com' #sender's email-id
+# EMAIL_HOST_PASSWORD = 'vnkx qraf kigj qodw' #password associated with above email-id (not the regular password)
+EMAIL_HOST_PASSWORD = 'fwhn idla vzfo rpse' #password associated with above email-id (not the regular password)
 
 
+# fwhn idla vzfo rpse
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # <-- Updated!
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # <-- Updated!
+
+
+LOG_FILE = "/home/agrisncp/repositories/selling-course/api/logs/myproject-django-errors.log"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "file": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": LOG_FILE,
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "ERROR",
+            "propagate": True,
+        },
+    },
+}
