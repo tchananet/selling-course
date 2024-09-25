@@ -22,6 +22,11 @@
 </head>
 <body>
     <!-- <header></header> -->
+    <div class="loadingScreen">
+    <!--My content is the word "soundscape" but the o is replaced with a disc-->
+    <h1>Agribea  </h1>
+    <h1><img src="assets/img/disk.png" alt="disc"/></h1>
+</div>
     <main class="home row" id="home">
         <div class="home-header col-md-7 col-sm-12">
             <h3 class="home-header-title">Maîtrisez l’agriculture avec nos packs de formation complets ! </h3>
@@ -39,7 +44,7 @@
             <!-- <div class="top-right">N</div> -->
             <!-- <div class="buttom-left">M</div> -->
             <!-- <img class="bg-img" src="assets/img/hero-media.avif" alt="" srcset=""> -->
-            <video src="assets/vids/ads.mp4" class="bg-img" autoplay loop controls muted></video>
+            <video src="assets/vids/ads.mp4" class="bg-img" autoplay loop controls  ></video>
             <!-- <div class="button-right"> From zero to hero</div> -->
         </div>
     </main>
@@ -210,6 +215,8 @@
                     localStorage.removeItem("transId") 
                     if(response.link){ 
                         localStorage.setItem("transId", response.transId)
+                        var loadingScreen = document.querySelector(".loadingScreen");
+                        loadingScreen.style.display = 'none';
                         paymentLink = response.link
                         
                     }

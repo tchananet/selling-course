@@ -166,7 +166,7 @@ EMAIL_HOST_USER =  'agribea.dar@gmail.com' #sender's email-id
 # EMAIL_HOST_PASSWORD = 'vnkx qraf kigj qodw' #password associated with above email-id (not the regular password)
 EMAIL_HOST_PASSWORD = 'fwhn idla vzfo rpse' #password associated with above email-id (not the regular password)
 
-
+# APPEND_SLASH=True
 # fwhn idla vzfo rpse
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # <-- Updated!
