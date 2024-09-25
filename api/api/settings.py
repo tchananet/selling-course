@@ -174,7 +174,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # <-- Updated!
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # <-- Updated!
 
 
-LOG_FILE = "/home/agrisncp/repositories/selling-course/api/logs/myproject-django-errors.log"
+# LOG_FILE = "/home/agrisncp/repositories/selling-course/api/logs/myproject-django-errors.log"
+LOG_FILE = "logs.log"
 
 LOGGING = {
     "version": 1,

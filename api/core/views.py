@@ -124,3 +124,8 @@ class RedeemPayment(generics.GenericAPIView):
 class WebHookViewSet(viewsets.ModelViewSet):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
+    def create(self, request):
+        print(request.data)
+        send_mail("VOTRE COURS AGRIBEA", message, settings.EMAIL_HOST_USER, [request.data['email']])
+
+        return super().create(request)
