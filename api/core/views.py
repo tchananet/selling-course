@@ -39,24 +39,24 @@ message = '''
             Fiches Techniques: https://drive.google.com/uc?export=download&id=1z79PR2b4sHuvsBPbPWkyYCEMUZ54It9c
 
             Pour tout soucis, n'hesitez pas a nous contacter.
-            Pour recuperer ces fichiers, et reavor, entrez votre code dans la page
+            Pour recuperer ces fichiers, entrez votre code dans la page de reclamation https://www.agribea.com/redeem.html
 
 
             Meilleures salutations,
-            AGRI BEA
+            AGRIBEA
         '''
 
 class InitiatePayment(generics.GenericAPIView):
     def get(self, request):
         payload = {
-            "amount":25000,
+            "amount":100,
             "redirectUrl":"http://www.agribea.com/payment-done.html",
             }
         headers = {
-            "apiuser":sandbox_apiuser,
-            "apikey":sandbox_apikey
+            "apiuser":live_apiuser,
+            "apikey":live_apikey
         }
-        request = requests.post(initiatePaymentUrlSandbox, json=payload, headers=headers) 
+        request = requests.post(initiatePaymentUrl, json=payload, headers=headers) 
         print(request.status_code)
         if (request.status_code==200):
             response = request.json()

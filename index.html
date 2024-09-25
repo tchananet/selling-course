@@ -39,7 +39,7 @@
             <!-- <div class="top-right">N</div> -->
             <!-- <div class="buttom-left">M</div> -->
             <!-- <img class="bg-img" src="assets/img/hero-media.avif" alt="" srcset=""> -->
-            <video src="assets/vids/ads.mp4" class="bg-img" autoplay loop controls></video>
+            <video src="assets/vids/ads.mp4" class="bg-img" autoplay loop controls muted></video>
             <!-- <div class="button-right"> From zero to hero</div> -->
         </div>
     </main>
@@ -189,8 +189,28 @@
     <script>
         const devApi = "http://127.0.0.1:8000";
         // const prodApi = "https://api-floral-water-6550.fly.dev"
-        const prodApi = "https://api.agribea.com"
-        fetch(`${prodApi}`);
+        const prodApi = "https://api.agribea.com";
+        var paymentLink = '#';
+        // fetch(`${prodApi}`);
+        // (paymentLink==='#') {
+            fetch(`${prodApi}/init-pay`).then((res)=>{
+                res.json().then((response)=>{
+                    document.getElementById("button-text").style.display = "flex";
+                    document.getElementById("loader").style.display = "none";
+                    console.log(response)
+                    const prevId = localStorage.getItem("transId")
+                    localStorage.removeItem("transId") 
+                    if(response.link){ 
+                        localStorage.setItem("transId", response.transId)
+                        paymentLink = response.link
+                        
+                    }
+                })
+            })
+            console.log(paymentLink)
+            
+        // }
+        
         var acc = document.getElementsByClassName('question-button');
         var i;
         for (i=0;i<acc.length;i++){
@@ -209,26 +229,12 @@
         const paymentButton = document.getElementById("pay-button");
         paymentButton.addEventListener("click", function (){
             document.getElementById("button-text").style.display = "none";
-            document.getElementById("loader").style.display = "flex";
-            console.log("HAs been clicked");
-            fetch(`${prodApi}/init-pay`).then((res)=>{
-                res.json().then((response)=>{
-                    document.getElementById("button-text").style.display = "flex";
-                    document.getElementById("loader").style.display = "none";
-                    console.log(response)
-                    const prevId = localStorage.getItem("transId")
-                    localStorage.removeItem("transId")
-
-                    if(response.link){
-                        
-                        localStorage.setItem("transId", response.transId)
-                        setTimeout(()=>{
-                            window.location.href = response.link
-                        }, 1000) 
-                        
-                    }
-                })
-            })
+            document.getElementById("loader").style.display = "flex"; 
+            window.location.href = paymentLink
+            setTimeout(()=>{
+                document.getElementById("button-text").style.display = "flex";
+                document.getElementById("loader").style.display = "none";
+            }, 1000)  ; 
         })
     </script>
 </body>
