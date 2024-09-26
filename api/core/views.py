@@ -7,6 +7,7 @@ from .models import CourseSales, Transaction
 from .serializers import SalesSerializer, TransactionSerializer
 
 from django.core.mail import send_mail
+from rest_framework import status
 
 class CourseGenericViewset(viewsets.ModelViewSet):
     queryset = CourseSales.objects.all()
@@ -121,11 +122,27 @@ class RedeemPayment(generics.GenericAPIView):
         else:
             return Response(request.status_code)
 
+# class WebHookViewSet(viewsets.ModelViewSet):
+#     queryset = Transaction.objects.all()
+#     serializer_class = TransactionSerializer 
+#     def create(self, request):
+#         print(request.data)
+#         if request.data['status']=='SUCCESSFUL':
+#             send_mail("VOTRE COURS AGRIBEA", message, settings.EMAIL_HOST_USER, [request.data['email']])
+#         return super().create(request)
+
 class WebHookViewSet(viewsets.ModelViewSet):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
-    def create(self, request):
-        print(request.data)
-        send_mail("VOTRE COURS AGRIBEA", message, settings.EMAIL_HOST_USER, [request.data['email']])
 
-        return super().create(request)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        
+        # Send email
+        if request.data.get('status') == 'SUCCESSFUL':
+            send_mail("VOTRE COURS AGRIBEA",  message, settings.EMAIL_HOST_USER, [request.data.get('email')])
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
