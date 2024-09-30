@@ -155,7 +155,8 @@ main.success {
 
 
 .bg-img {
-    width: 100%;
+    width: 90%;
+    align-self: center;
 }
 
 .over-flowing-img {
@@ -263,7 +264,7 @@ footer {
         font-size: 20px;
     }
     main {
-        gap: 10rem;
+        gap: 7rem;
         padding: 4rem;
         padding-block: 6rem;
         min-height: 80vh;
@@ -297,15 +298,15 @@ footer {
         align-items: center;
     }
     .call-to-action-1>p {
-        font-size: 0.7rem;
-        text-align: justify; 
+        /* font-size: 0.7rem; */
+        text-align: left; 
         width: 40%;
     } 
     .call-to-action-button {
-        width: 75%;
+        /* width: 75%; */
         margin-block: 0.5em;
         padding: 1rem;
-        padding-left: 0.5rem;
+        /* padding-left: 0.5rem; */
     }
     button {
         
@@ -313,7 +314,7 @@ footer {
     }
     .bg-img {
         /* padding-right: 15rem; */
-        width: 80%;
+        width: 100%;
     }
     
     /* Expert */
