@@ -189,7 +189,7 @@ LOGGING = {
     },
     "handlers": {
         "file": {
-            "level": "INFO",
+            "level": "INFO" ,
             "class": "logging.FileHandler",
             "filename": LOG_FILE,
             "formatter":"verbose"
@@ -198,7 +198,7 @@ LOGGING = {
     "loggers": {
         "django": {
             "handlers": ["file"],
-            "level": "INFO",
+            "level": "INFO ",
             "propagate": True,
         },
     },
