@@ -249,13 +249,13 @@
                     document.getElementById("button-text").style.display = "flex";
                     document.getElementById("loader").style.display = "none";
                     console.log(response)
-                    const prevId = localStorage.getItem("transId")
-                    localStorage.removeItem("transId") 
+                    const prevId = localStorage.getItem("transactionId")
+                    localStorage.removeItem("transactionId") 
                     if(response.link){ 
-                        localStorage.setItem("transId", response.transId)
+                        localStorage.setItem("transactionId", response.transId)
                         var loadingScreen = document.querySelector(".loadingScreen");
                         loadingScreen.style.display = 'none';
-                        paymentLink = response.link
+                        // paymentLink = response.link
                         
                     }
                 })

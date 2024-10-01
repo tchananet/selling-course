@@ -130,7 +130,7 @@
             transId = window.location.search.split("?")[1].split("&")[0].split("=")[1]
         }
         catch {
-            transId = localStorage.getItem("transId");
+            transId = localStorage.getItem("transactionId");
         }
         const codeText = document.getElementById("code-stuff")  
         codeText.textContent = `Votre code est ${transId}.`
