@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'core.middleware.RequestLoggingMiddleware',
 ]
 
 ROOT_URLCONF = 'api.urls'
@@ -188,15 +189,16 @@ LOGGING = {
     },
     "handlers": {
         "file": {
-            "level": "DEBUG",
+            "level": "INFO",
             "class": "logging.FileHandler",
             "filename": LOG_FILE,
+            "formatter":"verbose"
         },
     },
     "loggers": {
         "django": {
             "handlers": ["file"],
-            "level": "DEBUG",
+            "level": "INFO",
             "propagate": True,
         },
     },

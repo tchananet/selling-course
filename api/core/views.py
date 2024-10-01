@@ -8,6 +8,7 @@ from .serializers import SalesSerializer, TransactionSerializer
 
 from django.core.mail import send_mail
 from rest_framework import status
+from .mixins import LoggingMixin
 
 class CourseGenericViewset(viewsets.ModelViewSet):
     queryset = CourseSales.objects.all()
@@ -47,7 +48,7 @@ message = '''
             AGRIBEA
         '''
 
-class InitiatePayment(generics.GenericAPIView):
+class InitiatePayment(generics.GenericAPIView, LoggingMixin):
     def get(self, request):
         payload = {
             "amount":100,
@@ -70,17 +71,17 @@ class InitiatePayment(generics.GenericAPIView):
                 return Response(request) 
         return Response (request)
         
-class CheckPayment(generics.GenericAPIView):
+class CheckPayment(generics.GenericAPIView, LoggingMixin):
     def get(self, request):
         transId = request.query_params.get('transId') 
         headers = {
-            "apiuser":sandbox_apiuser,
-            "apikey":sandbox_apikey
+            "apiuser":live_apiuser,
+            "apikey":live_apikey
         }
-        checkPaymentUrlFull = str(checkPaymentUrlSandbox) + str(transId)
+        checkPaymentUrlFull = str(checkPaymentUrl) + str(transId)
         print(checkPaymentUrlFull)
         request = requests.get(checkPaymentUrlFull,headers=headers) 
-        print(request.status_code)
+        print(request.json())
         if (request.status_code==200):
             response = request.json()
             try:
@@ -92,19 +93,19 @@ class CheckPayment(generics.GenericAPIView):
 
             except Exception as e:
                 print(e)
-                return Response( request.status_code) 
+                return Response({'message':e, 'error':request.json()}) 
         else:
-            return Response(request.status_code)
+            return Response({'error':'request error','message':request.json()})
 
-class RedeemPayment(generics.GenericAPIView):
+class RedeemPayment(generics.GenericAPIView, LoggingMixin):
     def get(self, request):
         transId = request.query_params.get('code') 
         email_addreess = request.query_params.get('email') 
         headers = {
-            "apiuser":sandbox_apiuser,
-            "apikey":sandbox_apikey
+            "apiuser":live_apiuser,
+            "apikey":live_apikey
         } 
-        checkPaymentUrlFull = str(checkPaymentUrlSandbox) + str(transId)
+        checkPaymentUrlFull = str(checkPaymentUrl) + str(transId)
         print(checkPaymentUrlFull)
         request = requests.get(checkPaymentUrlFull,headers=headers) 
         print(request.status_code)
@@ -118,9 +119,9 @@ class RedeemPayment(generics.GenericAPIView):
 
             except Exception as e:
                 print(e)
-                return Response(request.status_code) 
+                return Response({'message':e}) 
         else:
-            return Response(request.status_code)
+            return Response({'message':request.json()})
 
 # class WebHookViewSet(viewsets.ModelViewSet):
 #     queryset = Transaction.objects.all()
@@ -131,7 +132,7 @@ class RedeemPayment(generics.GenericAPIView):
 #             send_mail("VOTRE COURS AGRIBEA", message, settings.EMAIL_HOST_USER, [request.data['email']])
 #         return super().create(request)
 
-class WebHookViewSet(viewsets.ModelViewSet):
+class WebHookViewSet(viewsets.ModelViewSet, LoggingMixin):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
 
@@ -143,6 +144,9 @@ class WebHookViewSet(viewsets.ModelViewSet):
         # Send email
         if request.data.get('status') == 'SUCCESSFUL':
             send_mail("VOTRE COURS AGRIBEA",  message, settings.EMAIL_HOST_USER, [request.data.get('email')])
+        else:
+            print(request.data)
+            
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
