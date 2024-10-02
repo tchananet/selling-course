@@ -1024,3 +1024,46 @@ DEBUG 2024-10-01 10:13:29,211 autoreload 9496 3464 File C:\Users\Tchana\AppData\
 DEBUG 2024-10-01 10:23:59,543 autoreload 9496 3464 File D:\DevPerso\selling-course\api\api\settings.py previous mtime: 1727773992.439932, current mtime: 1727774639.2009544
 DEBUG 2024-10-01 10:23:59,543 autoreload 9496 3464 D:\DevPerso\selling-course\api\api\settings.py notified as changed. Signal results: [(<function template_changed at 0x00000237A012B560>, None), (<function translation_file_changed at 0x00000237A126BE20>, None)].
 INFO 2024-10-01 10:23:59,543 autoreload 9496 3464 D:\DevPerso\selling-course\api\api\settings.py changed, reloading.
+INFO 2024-10-02 15:28:39,981 autoreload 3440 15880 Watching for file changes with StatReloader
+INFO 2024-10-02 15:31:29,053 autoreload 3780 7244 Watching for file changes with StatReloader
+INFO 2024-10-02 15:31:59,377 autoreload 3780 7244 D:\DevPerso\selling-course\api\core\views.py changed, reloading.
+INFO 2024-10-02 15:32:00,019 autoreload 7720 972 Watching for file changes with StatReloader
+INFO 2024-10-02 15:32:27,391 middleware 7720 16776 Request path: /
+INFO 2024-10-02 15:32:27,391 middleware 7720 16776 Request method: GET
+INFO 2024-10-02 15:32:27,392 middleware 7720 16776 Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Ch-Ua-Platform': '"Windows"', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-User': '?1', 'Sec-Fetch-Dest': 'document', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7', 'Cookie': 'csrftoken=rEo3h4ln7yi5xpymKNU2AjNF1POTe6iu'}
+INFO 2024-10-02 15:32:27,392 middleware 7720 16776 Request body: b''
+INFO 2024-10-02 15:32:29,169 basehttp 7720 16776 "GET / HTTP/1.1" 200 5364
+INFO 2024-10-02 15:32:29,259 basehttp 7720 16020 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2024-10-02 15:32:29,269 basehttp 7720 16776 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2024-10-02 15:32:29,278 basehttp 7720 16020 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2024-10-02 15:32:29,284 basehttp 7720 16776 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2024-10-02 15:32:29,363 basehttp 7720 16776 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2024-10-02 15:32:29,430 basehttp 7720 16776 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2024-10-02 15:32:29,444 basehttp 7720 16020 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2024-10-02 15:32:29,472 basehttp 7720 16776 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2024-10-02 15:32:29,502 basehttp 7720 16776 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2024-10-02 15:32:29,512 basehttp 7720 16776 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2024-10-02 15:32:29,538 basehttp 7720 16020 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2024-10-02 15:32:29,554 basehttp 7720 16020 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2024-10-02 15:32:29,707 middleware 7720 16020 Request path: /favicon.ico
+INFO 2024-10-02 15:32:29,708 middleware 7720 16020 Request method: GET
+INFO 2024-10-02 15:32:29,708 middleware 7720 16020 Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"', 'Sec-Ch-Ua-Mobile': '?0', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"Windows"', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:8000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7', 'Cookie': 'csrftoken=rEo3h4ln7yi5xpymKNU2AjNF1POTe6iu'}
+INFO 2024-10-02 15:32:29,737 middleware 7720 16020 Request body: b''
+WARNING 2024-10-02 15:32:29,946 log 7720 16020 Not Found: /favicon.ico
+WARNING 2024-10-02 15:32:29,947 basehttp 7720 16020 "GET /favicon.ico HTTP/1.1" 404 5077
+INFO 2024-10-02 15:32:44,114 middleware 7720 14860 Request path: /init-pay
+INFO 2024-10-02 15:32:44,114 middleware 7720 14860 Request method: GET
+INFO 2024-10-02 15:32:44,114 middleware 7720 14860 Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Ch-Ua-Platform': '"Windows"', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-User': '?1', 'Sec-Fetch-Dest': 'document', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7', 'Cookie': 'csrftoken=rEo3h4ln7yi5xpymKNU2AjNF1POTe6iu'}
+INFO 2024-10-02 15:32:44,115 middleware 7720 14860 Request body: b''
+INFO 2024-10-02 15:32:45,295 basehttp 7720 14860 "GET /init-pay HTTP/1.1" 200 5614
+INFO 2024-10-02 15:32:45,360 basehttp 7720 14860 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,363 basehttp 7720 16296 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,365 basehttp 7720 14860 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,368 basehttp 7720 16296 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,369 basehttp 7720 14860 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,373 basehttp 7720 16296 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,373 basehttp 7720 14860 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,380 basehttp 7720 16296 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,380 basehttp 7720 14860 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,385 basehttp 7720 14860 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2024-10-02 15:32:45,386 basehttp 7720 16296 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
