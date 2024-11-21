@@ -51,7 +51,7 @@ message = '''
 class InitiatePayment(generics.GenericAPIView, LoggingMixin):
     def get(self, request):
         payload = {
-            "amount":25000,
+            "amount":5000,
             "redirectUrl":"http://www.agribea.com/payment-done.html",
             }
         headers = {
